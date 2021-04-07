@@ -9,13 +9,14 @@ describe('GET functions', function() {
     beforeEach(async () => {
         mock.reset()
     })
-    it('should get the endpoint', function() {
+    it('should get the endpoint', function(done) {
         let data = { response: true }
         mock.onGet('https://localhost:3000/api/users').reply(200, data)
         expect(200)
+        done()
     })
 
-    it('should return a users', function() {
+    it('should return a users', async function() {
         mock.onGet('https://localhost:3000/api/users').reply(200, [
             {
             id: '16',
@@ -28,7 +29,7 @@ describe('GET functions', function() {
             status: "admin"
             }
         ])
-        return axios.get('https://localhost:3000/api/users')
+        return await axios.get('https://localhost:3000/api/users')
             .then(response => {
                 expect(response.data.length).to.equal(1)
                 expect(response.data[0]).to.have.property('id')
@@ -39,7 +40,7 @@ describe('GET functions', function() {
             })
     })
 
-    it('should return a posts', function() {
+    it('should return a posts', async function() {
         mock.onGet('https://localhost:3000/api/users').reply(200, [
             {
                 userID: '1',
@@ -47,7 +48,7 @@ describe('GET functions', function() {
                 text: 'Test text'
             }
         ])
-        return axios.get('https://localhost:3000/api/users')
+        return await axios.get('https://localhost:3000/api/users')
             .then((res) => {
                 expect(res.data[0]).to.have.property('title')
                 expect(res.data[0]).to.have.property('text')
@@ -56,24 +57,26 @@ describe('GET functions', function() {
             })
     })
 
-    it('should return 404 user path', function() {
+    it('should return 404 user path', function(done) {
         mock.onGet('https://localhost:3000/api/user')
         expect(404)
+        done()
     })
 
-    it('should return 404 post path', function() {
+    it('should return 404 post path', function(done) {
         mock.onGet('https://localhost:3000/api/post')
         expect(404)
+        done()
     })
 })
 
-describe('Post function', async function() {
+describe('Post function', function() {
     let instance
     beforeEach(() => {
         instance = axios.create()
         mock.reset()
     })
-    it('should simulate user registation', function() {
+    it('should simulate user registation', async function() {
         mock.onPost('https://localhost:3000/api/users/register', 
                 {
                     login: "Test1",
@@ -85,7 +88,7 @@ describe('Post function', async function() {
                     status: "admin"
                 })
                 .reply(201)
-        return instance
+        return await instance
             .post('https://localhost:3000/api/users/register',
             {
                 login: "Test1",
@@ -101,7 +104,7 @@ describe('Post function', async function() {
             })
     })
 
-    it('should simulate post creation', function() {
+    it('should simulate post creation', async function() {
         mock.onPost('https://localhost:3000/api/posts', 
                 {
                     userID: '1',
@@ -109,7 +112,7 @@ describe('Post function', async function() {
                     text: 'Test text'
                 })
                 .reply(201)
-        return instance
+        return await instance
             .post('https://localhost:3000/api/posts',
             {
                 userID: '1',
