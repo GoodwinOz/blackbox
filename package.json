@@ -4,7 +4,7 @@
   "description": "\"black box\" tests; jest, mocha, selenium-webdriver was used",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sendReport": "node nodemailer.js"
   },
   "jest": {
     "verbose": true,
