@@ -4,7 +4,11 @@
   "description": "\"black box\" tests; jest, mocha, selenium-webdriver was used",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest ./tests/theInternetAppTests/internet.test.js",
+    "test:#auth": "npm run test -- -t '#auth'",
+    "test:#download": "npm run test -- -t '#download'",
+    "test:debug": "node --inspect node_modules/.bin/jest --watch --runInBand ./tests/theInternetAppTests/internet.test.js",
+    "test:watch": "jest ./tests/theInternetAppTests/internet.test.js --watch --runInBand"
   },
   "keywords": [
     "jest",
