@@ -10,7 +10,26 @@
     "test:debug": "node --inspect node_modules/.bin/jest --watch --runInBand ./tests/theInternetAppTests/internet.test.js",
     "test:watch": "jest ./tests/theInternetAppTests/internet.test.js --watch --runInBand",
     "twst:e2e": "mocha ./test/crud.end-to-end.test.js -R nyan --timeout 5000",
-    "test:snapshot": "wdio"
+    "test:snapshot": "wdio",
+    "sendReport": "node nodemailer.js"
+  },
+  "jest": {
+    "verbose": true,
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "reporters": [
+      "default",
+      [
+        "./node_modules/jest-html-reporter",
+        {
+          "pageTitle": "theInternetApp Test Report",
+          "outputPath": "reports/index.html",
+          "includeFailureMsg": true,
+          "openReport": true
+        }
+      ]
+    ]
   },
   "keywords": [
     "jest",
@@ -22,7 +41,9 @@
   ],
   "author": "Goodwin",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  },
   "devDependencies": {
     "@wdio/cli": "^7.3.0",
     "@wdio/jasmine-framework": "^7.3.0",
@@ -35,7 +56,9 @@
     "jasmine": "^3.7.0",
     "jest": "^26.6.3",
     "jest-environment-selenium": "^2.1.2",
+    "jest-html-reporter": "^3.3.0",
     "mocha": "^8.3.2",
+    "nodemailer": "^6.5.0",
     "selenium": "^2.20.0",
     "selenium-webdriver": "^4.0.0-beta.2",
     "supertest": "^6.1.3",

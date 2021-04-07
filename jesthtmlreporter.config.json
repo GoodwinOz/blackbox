@@ -1,0 +1,6 @@
+{
+  "pageTitle": "theInternetApp html report",
+  "outputPath": "reports/index.html",
+  "includeFailureMsg": true,
+  "openReport": true
+}
