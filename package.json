@@ -9,7 +9,8 @@
     "test:#download": "npm run test -- -t '#download'",
     "test:debug": "node --inspect node_modules/.bin/jest --watch --runInBand ./tests/theInternetAppTests/internet.test.js",
     "test:watch": "jest ./tests/theInternetAppTests/internet.test.js --watch --runInBand",
-    "twst:e2e": "mocha ./test/crud.end-to-end.test.js -R nyan --timeout 5000"
+    "twst:e2e": "mocha ./test/crud.end-to-end.test.js -R nyan --timeout 5000",
+    "test:snapshot": "wdio"
   },
   "keywords": [
     "jest",

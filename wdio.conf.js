@@ -18,7 +18,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './tests/snapshots/**/*.js'
+        './tests/targetTests/snapshots/**/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -112,9 +112,9 @@ exports.config = {
         // The options
         {
             // Some options, see the docs for more
-            baselineFolder: join(process.cwd(), './tests/snapshots/tmp/baseline/'),
+            baselineFolder: join(process.cwd(), './tests/targetTests/snapshots/tmp/baseline/'),
             formatImageName: '{tag}-{logName}-{width}x{height}',
-            screenshotPath: join(process.cwd(), './tests/snapshots/tmp/'),
+            screenshotPath: join(process.cwd(), './tests/targetTests/snapshots/tmp/'),
             savePerInstance: true,
             autoSaveBaseline: true,
             blockOutStatusBar: true,

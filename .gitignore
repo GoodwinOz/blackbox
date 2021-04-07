@@ -1,5 +1,4 @@
 node_modules
-tests/targetTests/snapshots/tmp/baseline
-tests/targetTests/snapshots/tmp
 reports
+tests/targetTests/snapshots/tmp
 .env
