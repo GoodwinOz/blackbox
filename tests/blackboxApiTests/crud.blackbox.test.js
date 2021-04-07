@@ -6,7 +6,7 @@ const expect = chai.expect
 let mock = new MockAdapter(axios)
 
 describe('GET functions', function() {
-    beforeEach(() => {
+    beforeEach(async () => {
         mock.reset()
     })
     it('should get the endpoint', function() {
@@ -67,7 +67,7 @@ describe('GET functions', function() {
     })
 })
 
-describe('Post function', function() {
+describe('Post function', async function() {
     let instance
     beforeEach(() => {
         instance = axios.create()

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest ./tests/theInternetAppTests/internet.test.js",
-    "test:blackbox": "jest ./tests/blackboxApitests/crud.blackbox.test.js",
+    "test:blackbox": "mocha ./tests/blackboxApiTests/crud.blackbox.test.js",
     "test:#auth": "npm run test -- -t '#auth'",
     "test:#download": "npm run test -- -t '#download'",
     "test:debug": "node --inspect node_modules/.bin/jest --watch --runInBand ./tests/theInternetAppTests/internet.test.js",
@@ -51,6 +51,8 @@
     "@wdio/local-runner": "^7.3.0",
     "@wdio/selenium-standalone-service": "^7.3.0",
     "@wdio/spec-reporter": "^7.3.0",
+    "axios": "^0.21.1",
+    "axios-mock-adapter": "^1.19.0",
     "chai": "^4.3.4",
     "chai-http": "^4.3.0",
     "chromedriver": "^89.0.0",
