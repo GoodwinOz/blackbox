@@ -11,6 +11,8 @@ File with snapshot tests (snapshots from "http://webdriver.io") located in:
 
 **npm run test** - Run tests for "theInternetApp" ("jest ./tests/theInternetAppTests/internet.test.js");
 
+**npm run test:blackbox** - Run blackbox tests for api routers/endpoints. **Attention**: Before running test - run your API, and configure endpoints path in test.doc ("jest ./tests/blackboxApitests/crud.blackbox.test.js")
+
 **npm run test:debug** - Debug mode for "theInternetApp" ("node --inspect node_modules/.bin/jest --watch --runInBand ./tests/theInternetAppTests/internet.test.js");
 
 **npm run test:watch** -  Run tests for "theInternetApp" in --watch mode ("jest ./tests/theInternetAppTests/internet.test.js --watch --runInBand");

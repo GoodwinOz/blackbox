@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest ./tests/theInternetAppTests/internet.test.js",
+    "test:blackbox": "jest ./tests/blackboxApitests/crud.blackbox.test.js",
     "test:#auth": "npm run test -- -t '#auth'",
     "test:#download": "npm run test -- -t '#download'",
     "test:debug": "node --inspect node_modules/.bin/jest --watch --runInBand ./tests/theInternetAppTests/internet.test.js",
