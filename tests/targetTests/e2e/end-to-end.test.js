@@ -4,7 +4,7 @@ const chai = require('chai')
 const chaiHttp = require('chai-http')
 const request = require('supertest')
 
-// const app = require('../../../crud_project_testing/blackbox/server.js') //or: request(localhost:${PORT}) if no path to sever.js/app.js file
+// const app = require('../../../crud_project_testing/blackbox/server.js') //or: request(127.0.0.1:${PORT}) if no path to sever.js/app.js file
 
 //Assert syle
 const should = chai.should()
@@ -12,12 +12,12 @@ chai.should()
 chai.use(chaiHttp)
 
 const newUser = {
-    login: "newUser15",
+    login: "newUser17",
     nameAndSurname: "NewTest User",
     password: "qwerty123",
     mobileNumber: "3800001",
     gender: "male",
-    email: "newUser15@gmail.com",
+    email: "newUser17@gmail.com",
     status: "admin"
 }
 
@@ -27,7 +27,7 @@ const newE2ePost = {
     text: 'e2e test post text'
 }
 
-const postId = 36
+const postId = 39
 
 
 describe('Async e2e tests', () => {

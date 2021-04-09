@@ -56,18 +56,6 @@ describe('GET functions', function() {
                 expect(200)
             })
     })
-
-    it('should return 404 user path', function(done) {
-        mock.onGet('https://localhost:3000/api/user')
-        expect(404)
-        done()
-    })
-
-    it('should return 404 post path', function(done) {
-        mock.onGet('https://localhost:3000/api/post')
-        expect(404)
-        done()
-    })
 })
 
 describe('Post function', function() {
@@ -76,7 +64,7 @@ describe('Post function', function() {
         instance = axios.create()
         mock.reset()
     })
-    it('should simulate user registation', async function() {
+    it('should simulate user registation', function() {
         mock.onPost('https://localhost:3000/api/users/register', 
                 {
                     login: "Test1",
@@ -88,7 +76,7 @@ describe('Post function', function() {
                     status: "admin"
                 })
                 .reply(201)
-        return await instance
+        return instance
             .post('https://localhost:3000/api/users/register',
             {
                 login: "Test1",

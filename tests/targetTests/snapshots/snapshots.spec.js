@@ -25,13 +25,13 @@ describe('Example', () => {
 
   it('should save element by id', async () => {
     // Should save element by id
-    let element = await $('#__docusaurus > div.main-wrapper > header > div > div.buttons_1Wc3 > a:nth-child(4)')
+    let element = await $('#__docusaurus > div.main-wrapper > header > div > div.buttons_1Wc3 > a:nth-child(3)')
     await browser.saveElement(element, 'supportButton', { /* some options */ })
   })
 
   it('should check an element', async () => { 
     // Check an element by id
-    let element = await $('#__docusaurus > div.main-wrapper > header > div > div.buttons_1Wc3 > a:nth-child(4)')
+    let element = await $('#__docusaurus > div.main-wrapper > header > div > div.buttons_1Wc3 > a:nth-child(3)')
     expect(await browser.checkElement(element, 'supportButton')).toEqual(0)
   })
 })

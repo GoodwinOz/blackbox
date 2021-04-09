@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "jest ./tests/theInternetAppTests/internet.test.js",
+    "test:blizz": "jest ./tests/blizzardUi/blizzard.e2e.test.js",
     "test:blackbox": "mocha ./tests/blackboxApiTests/crud.blackbox.test.js",
     "test:#auth": "npm run test -- -t '#auth'",
     "test:#download": "npm run test -- -t '#download'",
     "test:debug": "node --inspect node_modules/.bin/jest --watch --runInBand ./tests/theInternetAppTests/internet.test.js",
     "test:watch": "jest ./tests/theInternetAppTests/internet.test.js --watch --runInBand",
-    "twst:e2e": "mocha ./test/crud.end-to-end.test.js -R nyan --timeout 5000",
+    "test:e2e": "mocha ./tests/targetTests/e2e/end-to-end.test.js -R nyan --timeout 5000",
     "test:snapshot": "wdio",
     "sendReport": "node nodemailer.js"
   },
